@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="serviceTest" parallel="false">
+    <test name="服务管理">
+        <classes>
+            <class name="service.ServiceCategoryTest"></class>
+            <class name="service.ServiceTest"></class>
+        </classes>
+    </test>
+</suite>
