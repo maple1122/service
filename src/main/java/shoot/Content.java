@@ -18,13 +18,15 @@ public class Content extends LoginPortal {
     static WebDriver driver;
 
     //审核
-    public static void check(Boolean status) throws InterruptedException {
+    public static void check() throws InterruptedException {
         if (CommonMethod.isJudgingElement(driver, By.xpath("//ul[@class='data-content']/li"))) {//校验是否有数据
             List<WebElement> list = driver.findElements(By.xpath("//ul[@class='data-content']/li"));//数据列表
             Actions action = new Actions(driver);
             action.moveToElement(list.get(list.size() - 1)).perform();//光标悬浮当页最后一条数据
+            String status = list.get(list.size() - 1).findElement(By.xpath("div/p[2]/span[@class='fr mr0']")).getText();
             list.get(list.size() - 1).findElement(By.xpath("div[2]/span[1]")).click();//当页最后一条数据点击审核
-            if (!status) driver.findElement(By.xpath("//span[@class='el-radio__input']/span"));//审核不通过
+            Thread.sleep(500);
+            if (status.equals("已通过")) driver.findElement(By.xpath("//span[@class='el-radio__input']/span"));//审核不通过
             driver.findElement(By.className("el-textarea__inner")).sendKeys("autoTest审核原因~" + System.currentTimeMillis());//审核原因
             driver.findElement(By.cssSelector("button.el-button.btn.el-button--primary")).click();//点击确定
             System.out.println("~~~ check()，内容审核，验证通过 ~~~");
