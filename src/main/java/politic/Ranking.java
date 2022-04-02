@@ -19,14 +19,14 @@ public class Ranking extends LoginPortal {
 
     //编辑政务指数
     public static void edit() throws InterruptedException {
-        if (CommonMethod.isJudgingElement(driver, By.xpath("//div[@class='layui-table-body layui-table-main']/table/tbody/tr"))) {
-            List<WebElement> trs = driver.findElements(By.xpath("//div[@class='layui-table-body layui-table-main']/table/tbody/tr"));
-            String original = trs.get(trs.size() - 1).findElement(By.xpath("td[last()]/div")).getText();
-            String edit = String.valueOf(Integer.valueOf(original) + 1);
-            trs.get(trs.size() - 1).findElement(By.xpath("td[last()]/div")).click();
-            trs.get(trs.size() - 1).findElement(By.xpath("td[last()]/input")).sendKeys(Keys.BACK_SPACE + edit);
+        if (CommonMethod.isJudgingElement(driver, By.xpath("//div[@class='layui-table-body layui-table-main']/table/tbody/tr"))) {//校验是否有数据
+            List<WebElement> trs = driver.findElements(By.xpath("//div[@class='layui-table-body layui-table-main']/table/tbody/tr"));//数据list
+            String original = trs.get(trs.size() - 1).findElement(By.xpath("td[last()]/div")).getText();//当页最后一条数据
+            String edit = String.valueOf(Integer.valueOf(original) + 1);//编辑后的指数=原指数+1
+            trs.get(trs.size() - 1).findElement(By.xpath("td[last()]/div")).click();//点击激活指数编辑框
+            trs.get(trs.size() - 1).findElement(By.xpath("td[last()]/input")).sendKeys(Keys.BACK_SPACE + edit);//录入新指数值
             Thread.sleep(200);
-            driver.findElement(By.id("searchBtn")).click();
+            driver.findElement(By.id("searchBtn")).click();//点击搜索使指数编辑框失去焦点进行保存
         } else System.out.println("无单位数据");
         Thread.sleep(3000);
     }

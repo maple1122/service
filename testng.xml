@@ -6,4 +6,12 @@
             <class name="service.ServiceTest"></class>
         </classes>
     </test>
+    <test name="问政管理">
+        <classes>
+            <class name="politic.ContentTest"></class>
+            <class name="politic.DepartmentTest"></class>
+            <class name="politic.QaPageTest"></class>
+            <class name="politic.RankingTest"></class>
+        </classes>
+    </test>
 </suite>

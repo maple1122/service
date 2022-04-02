@@ -14,6 +14,9 @@ import static org.testng.Assert.*;
  */
 public class ContentTest {
 
+    /**
+     * @description type=1,常见问题；2，来信选登
+     */
     @Test(priority = 1)//新建常见问题、来信选登
     public void testAddQuertion() throws InterruptedException {
         Content.addQuertion(1);
