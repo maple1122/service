@@ -26,7 +26,7 @@ public class Content extends LoginPortal {
             String status = list.get(list.size() - 1).findElement(By.xpath("div/p[2]/span[@class='fr mr0']")).getText();
             list.get(list.size() - 1).findElement(By.xpath("div[2]/span[1]")).click();//当页最后一条数据点击审核
             Thread.sleep(500);
-            if (status.equals("已通过")) driver.findElement(By.xpath("//span[@class='el-radio__input']/span"));//审核不通过
+            if (status.equals("已通过")) driver.findElement(By.xpath("//span[@class='el-radio__input']/span")).click();//审核不通过
             driver.findElement(By.className("el-textarea__inner")).sendKeys("autoTest审核原因~" + System.currentTimeMillis());//审核原因
             driver.findElement(By.cssSelector("button.el-button.btn.el-button--primary")).click();//点击确定
             System.out.println("~~~ check()，内容审核，验证通过 ~~~");

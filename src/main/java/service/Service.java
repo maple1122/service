@@ -114,7 +114,7 @@ public class Service extends LoginPortal {
             driver.findElement(By.id("delService")).click();
             Thread.sleep(200);
             driver.findElement(By.className("layui-layer-btn0")).click();
-            Thread.sleep(1500);
+            Thread.sleep(2000);
         }
         System.out.println("~~~ delete()，删除服务，执行成功 ~~~");
         Thread.sleep(3000);

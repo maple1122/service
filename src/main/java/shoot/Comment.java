@@ -22,7 +22,6 @@ public class Comment extends LoginPortal {
     public static void check() throws InterruptedException {
         if (CommonMethod.isJudgingElement(driver, By.xpath("//div[@class='el-checkbox-group']/div"))) {//校验是否有数据
             List<WebElement> list = driver.findElements(By.xpath("//div[@class='el-checkbox-group']/div"));//数据列表
-            System.out.println("000000000000");
             Actions action = new Actions(driver);
             Thread.sleep(200);
             action.moveToElement(list.get(list.size() - 2)).perform();//光标悬浮当页最后一条数据
@@ -37,7 +36,6 @@ public class Comment extends LoginPortal {
     //删除
     public static void delete() throws InterruptedException {
         if (CommonMethod.isJudgingElement(driver, By.xpath("//div[@class='el-checkbox-group']/div"))) {//校验是否有数据
-            System.out.println("1111111111111");
             List<WebElement> list = driver.findElements(By.xpath("//div[@class='el-checkbox-group']/div"));//数据列表
             Actions action = new Actions(driver);
             action.moveToElement(list.get(list.size() - 2)).perform();//光标悬浮当页最后一条数据
