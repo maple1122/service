@@ -23,7 +23,6 @@ public class Service extends LoginPortal {
     public static void addService() throws InterruptedException {
         getAutoCategory();
         int count = (int) (1 + Math.random() * 99);
-
         driver.findElement(By.id("addService")).click();
         Thread.sleep(500);
         driver.findElement(By.name("title")).sendKeys("autotest" + count);
