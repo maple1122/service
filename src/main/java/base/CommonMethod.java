@@ -270,15 +270,6 @@ public class CommonMethod {
     //拖动元素到指定元素
     public static void moveWebElement(WebDriver driver, WebElement draggable, WebElement target) throws InterruptedException {
         final String java_script =//执行元素拖拽的js。不懂，网上扒下来的~
-//                "var src=arguments[0],tgt=arguments[1];var dataTransfer={dropEffe" +
-//                        "ct:'',effectAllowed:'all',files:[],items:{},types:[],setData:fun" +
-//                        "ction(format,data){this.items[format]=data;this.types.append(for" +
-//                        "mat);},getData:function(format){return this.items[format];},clea" +
-//                        "rData:function(format){}};var emit=function(event,target){var ev" +
-//                        "t=document.createEvent('Event');evt.initEvent(event,true,false);" +
-//                        "evt.dataTransfer=dataTransfer;target.dispatchEvent(evt);};emit('" +
-//                        "mousedown',src);emit('dragstart',src);emit('dragenter',tgt);emi" +
-//                        "t('dragover',tgt);emit('drop',tgt);emit('dragend',src);emit('mouseup',src);";
         "var src=arguments[0],tgt=arguments[1];var dataTransfer={dropEffe" +
                 "ct:'',effectAllowed:'all',files:[],items:{},types:[],setData:fun" +
                 "ction(format,data){this.items[format]=data;this.types.append(for" +
@@ -288,9 +279,6 @@ public class CommonMethod {
                 "evt.dataTransfer=dataTransfer;target.dispatchEvent(evt);};emit('" +
                 "dragstart',src);emit('dragenter',tgt);emit('dragover',tgt);emit(" +
                 "'drop',tgt);emit('dragend',src);";
-//        Actions actions1 = new Actions(driver);
-//        actions1.clickAndHold(draggable).perform();
-//        System.out.println("draggable:"+draggable.getAttribute("draggable"));
         ((JavascriptExecutor) driver).executeScript(java_script, draggable, target);//执行拖拽js
         Thread.sleep(1000);
     }
@@ -323,10 +311,8 @@ public class CommonMethod {
                     break;
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
-
         }
 
     }

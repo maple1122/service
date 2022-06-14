@@ -146,11 +146,11 @@ public class Department extends LoginPortal {
                     Thread.sleep(2000);
                 } else break;
             }
-            if (!driver.findElement(By.xpath("//div[@class='nav-right fr']/ul/li/a")).getText().contains("爱富县")) {
+            if (!driver.findElement(By.xpath("//div[@class='nav-right fr']/ul/li/a")).getText().contains(siteName)) {
                 Actions action = new Actions(driver);
                 action.moveToElement(driver.findElement(By.className("nav-right fr"))).perform();
                 Thread.sleep(500);
-                driver.findElement(By.linkText("爱富县")).click();
+                driver.findElement(By.linkText(siteName)).click();
                 Thread.sleep(3000);
             }
             driver.findElement(By.xpath("//ul[@class='nav-list']/li[4]")).click();

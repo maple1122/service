@@ -24,10 +24,10 @@ public class DepartmentTest {
         Department.editDepartment();
     }
 
-    @Test(priority = 6)//删除测试单位
-    public void testDeleteDepartment() throws InterruptedException {
-        Department.deleteDepartment();
-    }
+//    @Test(priority = 6)//删除测试单位
+//    public void testDeleteDepartment() throws InterruptedException {
+//        Department.deleteDepartment();
+//    }
 
     @Test(priority = 3)//添加用户
     public void testAddUser() throws InterruptedException {
@@ -39,10 +39,10 @@ public class DepartmentTest {
         Department.editUser();
     }
 
-    @Test(priority = 5)//删除用户
-    public void testDeleteUser() throws InterruptedException {
-        Department.deleteUser();
-    }
+//    @Test(priority = 5)//删除用户
+//    public void testDeleteUser() throws InterruptedException {
+//        Department.deleteUser();
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

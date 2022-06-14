@@ -29,10 +29,10 @@ public class ServiceTest {
         Service.publish();
     }
 
-    @Test(priority = 5)//服务删除
-    public void testDelete() throws InterruptedException {
-        Service.delete();
-    }
+//    @Test(priority = 5)//服务删除
+//    public void testDelete() throws InterruptedException {
+//        Service.delete();
+//    }
 
     @Test(priority = 3)//服务上下线
     public void testOnOrOff() throws InterruptedException {

@@ -43,12 +43,12 @@ public class QaPageTest {
         QaPage.close(3);
     }
 
-    @Test(priority = 5)//删除
-    public void testDelete() throws InterruptedException {
-        QaPage.delete(1);
-        QaPage.delete(2);
-        QaPage.delete(3);
-    }
+//    @Test(priority = 5)//删除
+//    public void testDelete() throws InterruptedException {
+//        QaPage.delete(1);
+//        QaPage.delete(2);
+//        QaPage.delete(3);
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

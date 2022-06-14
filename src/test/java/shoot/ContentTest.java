@@ -19,10 +19,10 @@ public class ContentTest {
         Content.check();
     }
 
-    @Test(priority = 2)//删除内容
-    public void testDelete() throws InterruptedException {
-        Content.delete();
-    }
+//    @Test(priority = 2)//删除内容
+//    public void testDelete() throws InterruptedException {
+//        Content.delete();
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

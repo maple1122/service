@@ -30,10 +30,10 @@ public class ServiceCategoryTest {
         ServiceCategory.edit();
     }
 
-    @Test(priority = 4)//删除分类
-    public void testDelete() throws InterruptedException {
-        ServiceCategory.delete();
-    }
+//    @Test(priority = 4)//删除分类
+//    public void testDelete() throws InterruptedException {
+//        ServiceCategory.delete();
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

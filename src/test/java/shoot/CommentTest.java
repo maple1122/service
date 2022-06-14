@@ -19,10 +19,10 @@ public class CommentTest {
         Comment.check();
     }
 
-    @Test(priority = 2)//删除评论
-    public void testDelete() throws InterruptedException {
-        Comment.delete();
-    }
+//    @Test(priority = 2)//删除评论
+//    public void testDelete() throws InterruptedException {
+//        Comment.delete();
+//    }
 
     @BeforeMethod
     public void testStart(Method method) {

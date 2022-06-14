@@ -129,11 +129,11 @@ public class ServiceCategory extends LoginPortal {
                 } else break;
             }
 
-            if (!driver.findElement(By.xpath("//div[@class='nav-right']/ul/li/a")).getText().contains("爱富县")) {
+            if (!driver.findElement(By.xpath("//div[@class='nav-right']/ul/li/a")).getText().contains(siteName)) {
                 Actions action = new Actions(driver);
                 action.moveToElement(driver.findElement(By.className("nav-right"))).perform();
                 Thread.sleep(500);
-                driver.findElement(By.linkText("爱富县")).click();
+                driver.findElement(By.linkText(siteName)).click();
                 Thread.sleep(3000);
             }
         } catch (InterruptedException e) {
