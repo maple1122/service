@@ -20,8 +20,8 @@ import java.util.Properties;
  */
 public class LoginPortal {
 
-    public static String domain = env().get(0);
-    public static String siteName = env().get(1);
+    public static String domain = env().get(0);//获取域名
+    public static String siteName = env().get(1);//获取站点名
 
     static WebDriver driver = initDriver();
 
