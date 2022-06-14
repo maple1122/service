@@ -20,9 +20,7 @@ import java.util.Properties;
  */
 public class LoginPortal {
 
-    //public static String domain = "http://app.test.pdmiryun.com";//测试环境域名
     public static String domain = env().get(0);
-    //public static String siteName="爱富县";//测试环境站点
     public static String siteName = env().get(1);
 
     static WebDriver driver = initDriver();
@@ -65,7 +63,9 @@ public class LoginPortal {
 
     //默认wf账号登录
     public static WebDriver login() throws InterruptedException {
-        login("wf", "test1234");
+        String username = env().get(2);
+        String password = env().get(3);
+        login(username, password);
         return driver;
     }
 
@@ -81,7 +81,7 @@ public class LoginPortal {
         List<String> envlist = new ArrayList<>();
         try {
             prois = new FileInputStream("application.properties");
-            pro.load(prois);
+            pro.load(new InputStreamReader(prois,"UTF-8"));
 
             String domain = (String) pro.getProperty(envString + ".domain");
             String siteName = (String) pro.getProperty(envString + ".siteName");
